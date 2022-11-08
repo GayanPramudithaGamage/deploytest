@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "react-bootstrap";
+import PizzaChart from "./components/PizzaChart";
+import BookBarChart from "./components/BookBarChart";
+import useGoogleCharts from './components/useGoogleCharts';
 
 function App() {
+  const google = useGoogleCharts();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container className="mt-3">
+        <h1>With Hooks</h1>
+        <PizzaChart google={google} />
+        <BookBarChart google={google} />
+      </Container>
+    </>
   );
 }
 
